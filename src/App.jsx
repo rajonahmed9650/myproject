@@ -2,45 +2,58 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-[#020617] text-white">
 
-      {/* Background Glow */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
+      {/* Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
+        <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-cyan-600/10 blur-3xl" />
       </div>
 
       {/* Navbar */}
-      <nav className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
+      <nav className="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
 
           {/* Logo */}
-          <h1 className="text-2xl font-bold tracking-tight">
-            My<span className="text-blue-500">App</span>
-          </h1>
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold shadow-lg shadow-blue-600/30">
+              R
+            </div>
+
+            <div>
+              <h1 className="font-bold text-lg">
+                Rajon<span className="text-blue-500">Dev</span>
+              </h1>
+
+              <p className="text-xs text-slate-500">
+                Developer & DevOps
+              </p>
+            </div>
+          </div>
 
           {/* Menu */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="#" className="hover:text-white transition">
+          <div className="hidden items-center gap-8 text-sm text-slate-400 md:flex">
+            <a href="#home" className="transition hover:text-white">
               Home
             </a>
 
-            <a href="#" className="hover:text-white transition">
-              About
+            <a href="#skills" className="transition hover:text-white">
+              Skills
             </a>
 
-            <a href="#" className="hover:text-white transition">
-              Services
+            <a href="#deployment" className="transition hover:text-white">
+              Deployment
             </a>
 
-            <a href="#" className="hover:text-white transition">
+            <a href="#contact" className="transition hover:text-white">
               Contact
             </a>
           </div>
 
           {/* Button */}
-          <button className="bg-blue-600 hover:bg-blue-500 px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-blue-600/20">
-            Get Started
+          <button className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold shadow-lg shadow-blue-600/20 transition hover:bg-blue-500">
+            Let's Connect
           </button>
 
         </div>
@@ -48,76 +61,199 @@ function App() {
 
 
       {/* Hero */}
-      <main className="max-w-7xl mx-auto px-6">
+      <main id="home" className="mx-auto max-w-7xl px-6">
 
-        <section className="min-h-[75vh] flex items-center">
+        <section className="grid min-h-[80vh] items-center gap-16 py-20 lg:grid-cols-2">
 
-          <div className="max-w-4xl">
+          {/* Left */}
+          <div>
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-7 rounded-full border border-slate-800 bg-slate-900/70 text-sm text-slate-300">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Welcome to the future
+            {/* Status */}
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-slate-800 bg-slate-900/70 px-4 py-2 text-sm text-slate-300">
+              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-green-500" />
+              Available for new projects
             </div>
 
 
             {/* Heading */}
-            <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+            <h2 className="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
 
               Build.
-              <span className="text-blue-500"> Create.</span>
+              <span className="text-blue-500"> Deploy.</span>
+
               <br />
 
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Launch Something Amazing.
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Scale.
               </span>
-
             </h2>
 
 
             {/* Description */}
-            <p className="text-slate-400 text-lg md:text-xl mt-7 max-w-2xl leading-relaxed">
-              A modern React application powered by Vite and
-              Tailwind CSS, deployed on Linux with Nginx.
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
+              I build modern web applications using React and deploy
+              production-ready applications with Linux, Nginx, AWS EC2
+              and GitHub Actions.
             </p>
 
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mt-9">
+            <div className="mt-9 flex flex-wrap gap-4">
 
-              <button className="bg-blue-600 hover:bg-blue-500 px-7 py-3.5 rounded-xl font-semibold transition shadow-xl shadow-blue-600/20">
-                Get Started →
+              <button className="rounded-xl bg-blue-600 px-7 py-3.5 font-semibold shadow-xl shadow-blue-600/20 transition hover:-translate-y-1 hover:bg-blue-500">
+                View Projects →
               </button>
 
-              <button className="border border-slate-700 hover:border-slate-500 hover:bg-slate-900 px-7 py-3.5 rounded-xl font-semibold transition">
-                Explore Project
+              <button className="rounded-xl border border-slate-700 px-7 py-3.5 font-semibold transition hover:border-slate-500 hover:bg-slate-900">
+                Contact Me
               </button>
 
             </div>
 
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-10 mt-14">
+            <div className="mt-14 grid max-w-lg grid-cols-3 gap-6">
 
               <div>
-                <h3 className="text-3xl font-bold">99%</h3>
-                <p className="text-slate-500 text-sm mt-1">
-                  Performance
+                <h3 className="text-3xl font-bold">10+</h3>
+                <p className="mt-1 text-sm text-slate-500">
+                  Projects
                 </p>
               </div>
 
               <div>
                 <h3 className="text-3xl font-bold">24/7</h3>
-                <p className="text-slate-500 text-sm mt-1">
-                  Availability
+                <p className="mt-1 text-sm text-slate-500">
+                  Deployment
                 </p>
               </div>
 
               <div>
-                <h3 className="text-3xl font-bold">Fast</h3>
-                <p className="text-slate-500 text-sm mt-1">
-                  Deployment
+                <h3 className="text-3xl font-bold">AWS</h3>
+                <p className="mt-1 text-sm text-slate-500">
+                  Cloud
                 </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* Right - Terminal */}
+          <div className="relative">
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-1 shadow-2xl shadow-blue-950/30">
+
+              {/* Terminal Header */}
+              <div className="flex items-center gap-2 border-b border-slate-800 px-5 py-4">
+
+                <span className="h-3 w-3 rounded-full bg-red-500" />
+                <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                <span className="h-3 w-3 rounded-full bg-green-500" />
+
+                <span className="ml-3 text-xs text-slate-500">
+                  ubuntu@myproject:~
+                </span>
+
+              </div>
+
+
+              {/* Terminal Body */}
+              <div className="space-y-4 p-6 font-mono text-sm">
+
+                <p>
+                  <span className="text-green-400">
+                    ubuntu@server
+                  </span>
+                  <span className="text-slate-500">:</span>
+                  <span className="text-blue-400">~$</span>
+                  <span className="ml-2 text-white">
+                    git push origin main
+                  </span>
+                </p>
+
+                <p className="text-slate-500">
+                  Deploying application...
+                </p>
+
+                <p>
+                  <span className="text-blue-400">
+                    ✓
+                  </span>
+                  <span className="ml-2 text-slate-300">
+                    GitHub Actions started
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-blue-400">
+                    ✓
+                  </span>
+                  <span className="ml-2 text-slate-300">
+                    npm run build
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-blue-400">
+                    ✓
+                  </span>
+                  <span className="ml-2 text-slate-300">
+                    Build completed
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-blue-400">
+                    ✓
+                  </span>
+                  <span className="ml-2 text-slate-300">
+                    Deploying to AWS EC2
+                  </span>
+                </p>
+
+                <p>
+                  <span className="text-green-400">
+                    ✓ Deployment successful
+                  </span>
+                </p>
+
+                <p className="pt-2">
+                  <span className="text-green-400">
+                    ubuntu@server
+                  </span>
+                  <span className="text-slate-500">:</span>
+                  <span className="text-blue-400">~$</span>
+                  <span className="ml-2 animate-pulse text-white">
+                    _
+                  </span>
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* Floating Card */}
+            <div className="absolute -bottom-8 -left-8 hidden rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-xl md:block">
+
+              <div className="flex items-center gap-4">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 text-xl">
+                  🚀
+                </div>
+
+                <div>
+                  <p className="text-sm font-semibold">
+                    Production Ready
+                  </p>
+
+                  <p className="text-xs text-slate-500">
+                    CI/CD Pipeline Active
+                  </p>
+                </div>
+
               </div>
 
             </div>
@@ -127,92 +263,237 @@ function App() {
         </section>
 
 
-        {/* Features */}
-        <section className="pb-20">
+        {/* Skills */}
+        <section id="skills" className="py-24">
 
-          <div className="mb-10">
+          <div className="mb-12">
 
-            <p className="text-blue-500 font-semibold text-sm uppercase tracking-wider">
-              Technology
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-500">
+              My Stack
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">
-              Built with modern tools
+            <h2 className="mt-3 text-4xl font-bold">
+              Technologies I work with
             </h2>
 
-            <p className="text-slate-400 mt-3">
-              Everything you need to build and deploy modern web applications.
+            <p className="mt-4 max-w-2xl text-slate-400">
+              Modern technologies for building, deploying and maintaining
+              reliable web applications.
             </p>
 
           </div>
 
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
             {/* React */}
-            <div className="group p-7 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-900 hover:border-blue-500/50 transition duration-300">
+            <div className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-500/50">
 
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 text-xl font-bold mb-6">
-                ⚛
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/10 text-2xl">
+                ⚛️
               </div>
 
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold">
                 React
               </h3>
 
-              <p className="text-slate-400 leading-relaxed">
-                Build reusable and powerful user interfaces using
-                modern React components.
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                Modern component-based frontend development.
               </p>
-
-              <div className="mt-6 text-blue-400 text-sm font-medium group-hover:translate-x-1 transition">
-                Learn more →
-              </div>
 
             </div>
 
 
             {/* Tailwind */}
-            <div className="group p-7 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-900 hover:border-purple-500/50 transition duration-300">
+            <div className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-500/50">
 
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 text-xl font-bold mb-6">
-                ✦
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-500/10 text-2xl">
+                🎨
               </div>
 
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold">
                 Tailwind CSS
               </h3>
 
-              <p className="text-slate-400 leading-relaxed">
-                Create responsive and beautiful interfaces quickly
-                with utility-first CSS.
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                Responsive and modern user interface design.
               </p>
 
-              <div className="mt-6 text-purple-400 text-sm font-medium group-hover:translate-x-1 transition">
-                Learn more →
+            </div>
+
+
+            {/* AWS */}
+            <div className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-orange-500/50">
+
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-500/10 text-2xl">
+                ☁️
               </div>
+
+              <h3 className="text-xl font-semibold">
+                AWS
+              </h3>
+
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                EC2, VPC, Security Groups and cloud infrastructure.
+              </p>
 
             </div>
 
 
             {/* Nginx */}
-            <div className="group p-7 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-900 hover:border-green-500/50 transition duration-300">
+            <div className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-green-500/50">
 
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/10 text-green-400 text-xl font-bold mb-6">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-500/10 text-2xl">
                 N
               </div>
 
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold">
                 Nginx
               </h3>
 
-              <p className="text-slate-400 leading-relaxed">
-                Serve your frontend efficiently and use Nginx
-                as a powerful web server.
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                Web server, reverse proxy and production deployment.
               </p>
 
-              <div className="mt-6 text-green-400 text-sm font-medium group-hover:translate-x-1 transition">
-                Learn more →
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* Deployment */}
+        <section id="deployment" className="py-24">
+
+          <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/50">
+
+            <div className="grid lg:grid-cols-2">
+
+              {/* Left */}
+              <div className="p-8 md:p-12">
+
+                <p className="text-sm font-semibold uppercase tracking-widest text-blue-500">
+                  Automation
+                </p>
+
+                <h2 className="mt-4 text-4xl font-bold">
+                  From Git Push to Production
+                </h2>
+
+                <p className="mt-5 leading-relaxed text-slate-400">
+                  Every code change can automatically go through the
+                  CI/CD pipeline and reach the production server.
+                </p>
+
+
+                <div className="mt-8 flex flex-wrap gap-3">
+
+                  <span className="rounded-full border border-slate-700 bg-slate-800 px-4 py-2 text-sm">
+                    GitHub
+                  </span>
+
+                  <span className="rounded-full border border-slate-700 bg-slate-800 px-4 py-2 text-sm">
+                    Actions
+                  </span>
+
+                  <span className="rounded-full border border-slate-700 bg-slate-800 px-4 py-2 text-sm">
+                    AWS EC2
+                  </span>
+
+                  <span className="rounded-full border border-slate-700 bg-slate-800 px-4 py-2 text-sm">
+                    Nginx
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* Right Pipeline */}
+              <div className="border-t border-slate-800 bg-slate-950/50 p-8 md:p-12 lg:border-l lg:border-t-0">
+
+                <div className="space-y-5">
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10 text-sm font-bold text-blue-400">
+                      01
+                    </div>
+
+                    <div>
+                      <p className="font-semibold">
+                        Git Push
+                      </p>
+
+                      <p className="text-sm text-slate-500">
+                        Developer pushes new code
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="ml-5 h-8 border-l border-dashed border-slate-700" />
+
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/10 text-sm font-bold text-purple-400">
+                      02
+                    </div>
+
+                    <div>
+                      <p className="font-semibold">
+                        GitHub Actions
+                      </p>
+
+                      <p className="text-sm text-slate-500">
+                        CI/CD pipeline starts
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="ml-5 h-8 border-l border-dashed border-slate-700" />
+
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-sm font-bold text-orange-400">
+                      03
+                    </div>
+
+                    <div>
+                      <p className="font-semibold">
+                        Build & Deploy
+                      </p>
+
+                      <p className="text-sm text-slate-500">
+                        Build React and send to EC2
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div className="ml-5 h-8 border-l border-dashed border-slate-700" />
+
+
+                  <div className="flex items-center gap-4">
+
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-sm font-bold text-green-400">
+                      04
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-green-400">
+                        Live 🚀
+                      </p>
+
+                      <p className="text-sm text-slate-500">
+                        Nginx serves the application
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
 
             </div>
@@ -222,62 +503,26 @@ function App() {
         </section>
 
 
-        {/* Deployment Section */}
-        <section className="mb-20">
+        {/* CTA */}
+        <section id="contact" className="py-24">
 
-          <div className="rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-900 to-slate-950 p-8 md:p-12">
+          <div className="rounded-3xl border border-blue-500/20 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-transparent p-10 text-center md:p-16">
 
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+              Let's Build Something
+            </p>
 
-              <div>
+            <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
+              Ready to turn your idea into a real application?
+            </h2>
 
-                <p className="text-blue-500 font-semibold mb-3">
-                  CI/CD
-                </p>
+            <p className="mx-auto mt-5 max-w-2xl text-slate-400">
+              Build it, deploy it and make it available to the world.
+            </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Deploy automatically.
-                </h2>
-
-                <p className="text-slate-400 mt-4 leading-relaxed">
-                  Push your code to GitHub and let GitHub Actions
-                  automatically build and deploy your application
-                  to your EC2 server.
-                </p>
-
-                <button className="mt-7 bg-white text-slate-950 px-6 py-3 rounded-xl font-semibold hover:bg-slate-200 transition">
-                  View Deployment
-                </button>
-
-              </div>
-
-
-              {/* Pipeline */}
-              <div className="space-y-4">
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60">
-                  <span className="text-blue-400">01</span>
-                  <span>Git Push</span>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60">
-                  <span className="text-purple-400">02</span>
-                  <span>GitHub Actions</span>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60">
-                  <span className="text-green-400">03</span>
-                  <span>Build & Deploy</span>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-blue-600/20 border border-blue-500/20">
-                  <span className="text-blue-400">04</span>
-                  <span>Live Website 🚀</span>
-                </div>
-
-              </div>
-
-            </div>
+            <button className="mt-8 rounded-xl bg-blue-600 px-8 py-4 font-semibold shadow-xl shadow-blue-600/20 transition hover:-translate-y-1 hover:bg-blue-500">
+              Start a Project →
+            </button>
 
           </div>
 
@@ -289,14 +534,20 @@ function App() {
       {/* Footer */}
       <footer className="border-t border-slate-800">
 
-        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-4">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-6 py-8 md:flex-row">
 
-          <p className="text-slate-500 text-sm">
-            © 2026 MyApp. Built with React & Tailwind CSS.
-          </p>
+          <div>
+            <p className="font-semibold">
+              Rajon<span className="text-blue-500">Dev</span>
+            </p>
 
-          <p className="text-slate-600 text-sm">
-            Deployed with GitHub Actions + AWS EC2
+            <p className="mt-1 text-sm text-slate-500">
+              Building modern web applications.
+            </p>
+          </div>
+
+          <p className="text-sm text-slate-600">
+            © 2026 RajonDev · React · AWS · Nginx · GitHub Actions
           </p>
 
         </div>
